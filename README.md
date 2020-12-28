@@ -71,4 +71,46 @@ func main() {
 
 3). get `EOF` immediately
 
+## more info
+
+I am base in China, if I don't use a proxy I get : 
+
+```
+read tcp <my-ip>:42438->39.106.255.190:443: read: connection reset by peer
+```
+
+if I use a proxy(Hongkong) in goland I get: EOF
+
+I try to run in an aws server in HongKong
+
+```
+go run main.go
+go: downloading github.com/gorilla/websocket v1.4.2
+read tcp <my-server-ip>:48390->39.106.255.190:443: read: connection reset by peer
+```
+
+from my laptop to telnet
+
+```
+$ telnet api.blxrbdn.com
+Trying 39.105.165.155...
+telnet: Unable to connect to remote host: Connection refused
+
+$ telnet api.blxrbdn.com 443
+Trying 39.106.255.190...
+Connected to api.blxrbdn.com.
+Escape character is '^]'.
+```
+
+nslookup
+
+```
+nslookup api.blxrbdn.com
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   api.blxrbdn.com
+Address: 39.105.165.155
+```
 
