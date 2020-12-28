@@ -71,7 +71,7 @@ func main() {
 
 3). get `EOF` immediately
 
-## more info
+## More info
 
 I am base in China, if I don't use a proxy I get : 
 
