@@ -1,4 +1,4 @@
-## Summary
+## Problem
 
 Failed to run bloxroute stream go example
 
@@ -69,6 +69,6 @@ func main() {
 
 2). go run main.go
 
-3). get error
+3). get `EOF` immediately
 
 
