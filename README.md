@@ -1,12 +1,8 @@
-## Problem
+# bloxroute go stream api example
 
-Failed to run bloxroute stream go example
+## get started
 
-after run the example, just get `EOF` in the output
-
-## Reproduce
-
-1). copy go snippet from the document: https://docs.bloxroute.com/streams/newtxs-and-pendingtxs#requests-cloud-api , because I am a non enterprise account type, I use `wss://api.blxrbdn.com/ws` to connect, replace the `Authorization` string to my `secret_hash.txt` string.
+1). Copy go snippet from the document: https://docs.bloxroute.com/streams/newtxs-and-pendingtxs#requests-cloud-api
 
 ```go
 package main
@@ -43,7 +39,7 @@ func main() {
 	}
 	dialer := websocket.DefaultDialer
 	dialer.TLSClientConfig = tlsConfig
-	wsSubscriber, _, err := dialer.Dial("wss://api.blxrbdn.com/ws", http.Header{"Authorization": []string{"420eccb0f2666a6e189c9f66d2d6678d"}})
+	wsSubscriber, _, err := dialer.Dial("wss://api.blxrbdn.com/ws", http.Header{"Authorization": []string{"$your-authorization"}})
 
 	if err != nil {
 		fmt.Println(err)
@@ -66,9 +62,8 @@ func main() {
 	}
 }
 ``` 
+2). Copy you account certificate to `cert` dir, if you are enterprise user.
 
-2). go run main.go
+3). Because I am a non enterprise account type, I use `wss://api.blxrbdn.com/ws` to connect, replace the `Authorization` string (find in you blxrbdn account info page https://portal.bloxroute.com/).
 
-3). get `EOF` immediately
-
-
+3). go run main.go

@@ -32,7 +32,15 @@ func main() {
 	 }
 	 dialer := websocket.DefaultDialer
 	 dialer.TLSClientConfig = tlsConfig
-	 wsSubscriber, _, err := dialer.Dial("wss://api.blxrbdn.com/ws", http.Header{"Authorization": []string{"420eccb0f2666a6e189c9f66d2d6678d"}})
+	 /**
+	 * if run from China replace wss://api.blxrbdn.com/ws to below address
+	 * China:
+	 * wss://47.114.88.136/ws
+	 * wss://39.105.165.155/ws
+	 * HongKong
+	 * wss://8.210.133.198/ws
+	 */
+	 wsSubscriber, _, err := dialer.Dial("wss://api.blxrbdn.com/ws", http.Header{"Authorization": []string{"ZTg0ZjFhZDYtMDBmYy00YmRkLTljZjMtMjhlY2IwYTU5MTMzOjQyMGVjY2IwZjI2NjZhNmUxODljOWY2NmQyZDY2Nzhk"}})
 
 	if err != nil {
 		fmt.Println(err)
