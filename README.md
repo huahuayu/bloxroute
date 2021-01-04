@@ -65,6 +65,6 @@ func main() {
 
 2). Copy you account certificate to `cert` dir, if you are enterprise user.
 
-3). Because I am a non enterprise account type, I use `wss://api.blxrbdn.com/ws` to connect, replace the `Authorization` string (find in you blxrbdn account info page https://portal.bloxroute.com/).
+3). Because I am a non enterprise account type, I use `wss://api.blxrbdn.com/ws` to connect, replace the `Authorization` string (find in you bloxroute account info page https://portal.bloxroute.com/).
 
 4). go run main.go
